@@ -11,10 +11,13 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Docker') {
+        stage('Docker build and deploy') {
             steps {
                 sh 'docker build -t curd:dev .'
                 sh 'docker images'
+                sh ' docker run -d curd:dev'
+                sh ' docker ps -a'
+                
             }
         }
     }

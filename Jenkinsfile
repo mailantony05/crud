@@ -13,7 +13,8 @@ pipeline {
         }
         stage('Docker') {
             steps {
-                sh 'which node'
+                sh 'docker build -t curd:dev .'
+                sh 'docker images'
             }
         }
     }

@@ -8,13 +8,12 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                sh 'nodejs --version'
                 sh 'npm install'
             }
         }
         stage('Docker') {
             steps {
-                sh 'nodejs --version'
+                sh 'which node'
             }
         }
     }
